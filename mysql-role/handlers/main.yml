@@ -1,0 +1,8 @@
+#SPDX-License-Identifier: MIT-0
+---
+# handlers file for mysql-role
+- name: restart mysql
+  ansible.builtin.service:
+    name: "{{ 'mysql' if ansible_of_family == 'Debian' else 'mariadb' }}"
+    state: restarted
+

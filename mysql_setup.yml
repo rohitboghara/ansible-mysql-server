@@ -1,0 +1,6 @@
+---
+- name: Myslq Setup
+  hosts: mysqlserver
+  become: true
+  roles:
+    - mysql-role

@@ -1,0 +1,13 @@
+#SPDX-License-Identifier: MIT-0
+---
+# tasks file for mysql-role
+- name: Install MySql
+  ansible.builtin.package:
+    name: "{{ 'mysql-server' if ansible_os_family == 'Debian' else 'mariadb-server'  }}"
+    state: present
+- name: start Mysql 
+  ansible.builtin.service:
+    name: "{{ 'mysql' if ansible_os_family == 'Debian' else 'mariadb' }}"
+    state: started
+    enabled: yes
+
