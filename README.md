@@ -45,3 +45,21 @@ This repository contains:
 |  (Ansible host)   | --------> |  MySQL installation     |
 | ansible-playbook  |           |  Configuration + Start  |
 +-------------------+           +------------------------+
+
+
+# ================================
+# Inventory file for MySQL servers
+# ================================
+
+[mysql_servers]
+# Format: hostname ansible_host=<IP> ansible_user=<username>
+
+db1 ansible_host=192.168.1.10 ansible_user=ubuntu
+db2 ansible_host=192.168.1.11 ansible_user=ubuntu
+db3 ansible_host=192.168.1.12 ansible_user=centos
+db4 ansible_host=192.168.1.13 ansible_user=ec2-user
+
+# Optional: You can add group-specific variables if needed
+# [mysql_servers:vars]
+# ansible_ssh_private_key_file=~/.ssh/id_rsa
+# mysql_root_password=StrongPass123
